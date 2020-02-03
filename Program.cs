@@ -24,9 +24,9 @@ namespace TreasureIsland
             Helper.Render();
 
             ObjectsOnMap.RobotOnMap(3, 4);
-            //ObjectsOnMap.HomeOnMap();
+            ObjectsOnMap.HomeOnMap(3, 5, 9, 10);
             ObjectsOnMap.BridgeOnMap(6, 8);
-            ObjectsOnMap.RiverOnMap();
+            ObjectsOnMap.RiverOnMap(9, 7, 3, 18);
             ObjectsOnMap.TreasureOnMap(2, 2);
 
             Helper.BackCursor();
