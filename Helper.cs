@@ -13,9 +13,9 @@ namespace TreasureIsland
         public static void Render()
         {
             Console.Clear();
-            for (int x = 0; x < Program.frame.Count; x++)
+            foreach (var x in Program.Frame)
             {
-                Console.WriteLine(string.Join("", Program.frame[x]));
+                Console.WriteLine(string.Join("", x));
             }
         }
     }

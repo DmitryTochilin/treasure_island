@@ -5,34 +5,42 @@ namespace TreasureIsland
 {
     class FileReader
     {
-        static string line;
+        private static string line;
 
         public static void ReadingFromFile(string filePath)
         {
-            string[] allLines = File.ReadAllLines(filePath);
+            var allLines = File.ReadAllLines(filePath);
 
             line = allLines[0].ToLower();
 
         }
 
-        public static void BaseParsing()
+        public static int[] BaseParsing()
         {
-            if (line.StartsWith("base"))
-            {
-                line = line.Replace("base", "")
-                            .Replace(" ", "")
-                            .Replace("(", "")
-                            .Replace(")", "");
 
-                string[] coordinates = line.Split(":");
+            line = line.Replace("base", "")
+                       .Replace(" ", "")
+                       .Replace("(", "")
+                       .Replace(")", "");
 
-                string[] start = coordinates[0].Split(",");
+            var coordinates = line.Split(":");
 
-                string[] end = coordinates[1].Split(",");
+            var startPoint = coordinates[0].Split(",");
 
-                Console.WriteLine(start[0]);
-                Console.WriteLine(end[1]);
-            }
-        } 
+            var endPoint = coordinates[1].Split(",");
+
+
+
+            var X1 = int.Parse(startPoint[0]);
+            var Y1 = int.Parse(startPoint[1]);
+
+            var X2 = int.Parse(endPoint[0]);
+            var Y2 = int.Parse(endPoint[1]);
+
+            var test = new int[]{X1, Y1, X2, Y2};
+
+            return test;
+        }
     }
-}        
+}
+        

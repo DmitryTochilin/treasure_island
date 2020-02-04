@@ -5,34 +5,38 @@ namespace TreasureIsland
 {
     class Program
     {
-        public static List<string[]> frame = new List<string[]>();
+        public static List<string[]> Frame = new List<string[]>();
 
-        public static string home = "@";
-        public static string treasure = "+";
-        public static string river = "~";
-        public static string bridge = "#";
-        public static string emptyCell = ".";
-        public static string robot = "%";
+        public static string Home = "@";
+        public static string Treasure = "+";
+        public static string River = "~";
+        public static string Bridge = "#";
+        public static string EmptyCell = ".";
+        public static string Robot = "%";
 
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.CursorVisible = false;
 
+            FileReader.ReadingFromFile(@"C:\Users\dtochilin\source\repos\TreasureIsland\Map.txt");
+
             MapInit.FrameMaker();
 
             Helper.Render();
 
+
             ObjectsOnMap.RobotOnMap(3, 4);
-            ObjectsOnMap.HomeOnMap(3, 5, 9, 10);
+            ObjectsOnMap.HomeOnMap(FileReader.BaseParsing()[0],
+                                   FileReader.BaseParsing()[1],
+                                   FileReader.BaseParsing()[2],
+                                   FileReader.BaseParsing()[3]);
             ObjectsOnMap.BridgeOnMap(6, 8);
-            ObjectsOnMap.RiverOnMap(9, 7, 3, 18);
+            ObjectsOnMap.RiverOnMap(4, 2, 7, 5);
             ObjectsOnMap.TreasureOnMap(2, 2);
 
-            Helper.BackCursor();
 
-            FileReader.ReadingFromFile(@"C:\Users\dtochilin\source\repos\TreasureIsland\Map.txt");
-            FileReader.BaseParsing();
+            Helper.BackCursor();
 
             Console.ReadKey();
         }

@@ -4,56 +4,56 @@ namespace TreasureIsland
 {
     class ObjectsOnMap
     {
-        public static void HomeOnMap(int X1, int Y1, int X2, int Y2)
+        public static void HomeOnMap(int x1, int y1, int x2, int y2)
         {
 
-            int default_Y = Y2;
+            int defaultY = y2;
 
-            if (X1 > X2)
+            if (x1 > x2)
             {
-                while (X1 >= X2)
+                while (x1 >= x2)
                 {
-                    Y2 = default_Y;
-                    Program.frame[X2 += 1][Y2] = Program.home;
+                    y2 = defaultY;
+                    Program.Frame[x2 += 1][y2] = Program.Home;
                     Helper.Render();
-                    if (Y1 > Y2)
+                    if (y1 > y2)
                     {
-                        while (Y1 > Y2)
+                        while (y1 > y2)
                         {
-                            Program.frame[X2][Y2 += 1] = Program.home;
+                            Program.Frame[x2][y2 += 1] = Program.Home;
                             Helper.Render();
                         }
                     }
-                    else if (Y1 < Y2)
+                    else if (y1 < y2)
                     {
-                        while (Y1 > Y2)
+                        while (y1 > y2)
                         {
-                            Program.frame[X2][Y2 -= 1] = Program.home;
+                            Program.Frame[x2][y2 -= 1] = Program.Home;
                             Helper.Render();
                         }
                     }
                 }
             }
-            else if (X1 < X2)
+            else if (x1 < x2)
             {
-                while (X1 <= X2)
+                while (x1 <= x2)
                 {
-                    Y2 = default_Y;
-                    Program.frame[X2 -= 1][Y2] = Program.home;
+                    y2 = defaultY;
+                    Program.Frame[x2 -= 1][y2] = Program.Home;
                     Helper.Render();
-                    if (Y1 > Y2)
+                    if (y1 > y2)
                     {
-                        while (Y1 > Y2)
+                        while (y1 > y2)
                         {
-                            Program.frame[X2][Y2 += 1] = Program.home;
+                            Program.Frame[x2][y2 += 1] = Program.Home;
                             Helper.Render();
                         }
                     }
-                    else if (Y1 < Y2)
+                    else if (y1 < y2)
                     {
-                        while (Y1 < Y2)
+                        while (y1 < y2)
                         {
-                            Program.frame[X2][Y2 -= 1] = Program.home;
+                            Program.Frame[x2][y2 -= 1] = Program.Home;
                             Helper.Render();
                         }
                     }
@@ -61,106 +61,106 @@ namespace TreasureIsland
             }
         }
 
-        public static void RobotOnMap(int X, int Y)
+        public static void RobotOnMap(int x, int y)
         {
-            Console.SetCursorPosition(X, Y);
-            Console.Write(Program.robot);
-            Program.frame[X][Y] = Program.robot;
+            Console.SetCursorPosition(x, y);
+            Console.Write(Program.Robot);
+            Program.Frame[x][y] = Program.Robot;
         }
 
-        public static void TreasureOnMap(int X, int Y)
+        public static void TreasureOnMap(int x, int y)
         {
-            Console.SetCursorPosition(X, Y);
-            Console.Write(Program.treasure);
-            Program.frame[X][Y] = Program.treasure;
+            Console.SetCursorPosition(x, y);
+            Console.Write(Program.Treasure);
+            Program.Frame[x][y] = Program.Treasure;
         }
 
-        public static void BridgeOnMap(int X, int Y)
+        public static void BridgeOnMap(int x, int y)
         {
-            Console.SetCursorPosition(X, Y);
-            Console.Write(Program.bridge);
-            Program.frame[X][Y] = Program.bridge;
+            Console.SetCursorPosition(x, y);
+            Console.Write(Program.Bridge);
+            Program.Frame[x][y] = Program.Bridge;
         }
 
-        public static void RiverOnMap(int X1, int Y1, int X2, int Y2)
+        public static void RiverOnMap(int x1, int y1, int x2, int y2)
         {
             {
-                if (X1 == X2)
+                if (x1 == x2)
                 {
-                    if (Y1 > Y2)
+                    if (y1 > y2)
                     {
-                        while (Y1 > Y2)
+                        while (y1 > y2)
                         {
-                            Y2 += 1;
-                            Program.frame[X2][Y2] = Program.river;
+                            y2 += 1;
+                            Program.Frame[x2][y2] = Program.River;
                             Helper.Render();
                         }
                     }
-                    else if (Y1 < Y2)
+                    else if (y1 < y2)
                     {
-                        while (Y1 < Y2)
+                        while (y1 < y2)
                         {
-                            Y2 -= 1;
-                            Program.frame[X2][Y2] = Program.river;
+                            y2 -= 1;
+                            Program.Frame[x2][y2] = Program.River;
                             Helper.Render();
                         }
                     }
 
-                    Program.frame[X2][Y2] = Program.river;
+                    Program.Frame[x2][y2] = Program.River;
                     Helper.Render();
                 }
 
-                if (X1 > X2)
+                if (x1 > x2)
                 {
-                    while (X1 > X2)
+                    while (x1 > x2)
                     {
-                        if (Y1 > Y2)
+                        if (y1 > y2)
                         {
-                            while (Y1 > Y2)
+                            while (y1 > y2)
                             {
-                                Y2 += 1;
+                                y2 += 1;
                                 break;
                             }
 
-                            Program.frame[X2 += 1][Y2] = Program.river;
+                            Program.Frame[x2 += 1][y2] = Program.River;
                             Helper.Render();
                         }
-                        else if (Y1 < Y2)
+                        else if (y1 < y2)
                         {
-                            while (Y1 < Y2)
+                            while (y1 < y2)
                             {
-                                Y2 -= 1;
+                                y2 -= 1;
                                 break;
                             }
                         }
 
-                        Program.frame[X2 += 1][Y2] = Program.river;
+                        Program.Frame[x2 += 1][y2] = Program.River;
                         Helper.Render();
                     }
                 }
 
-                if (X1 < X2)
+                if (x1 < x2)
                 {
-                    while (X1 < X2)
+                    while (x1 < x2)
                     {
-                        if (Y1 > Y2)
+                        if (y1 > y2)
                         {
-                            while (Y1 > Y2)
+                            while (y1 > y2)
                             {
-                                Y2 += 1;
+                                y2 += 1;
                                 break;
                             }
                         }
-                        else if (Y1 < Y2)
+                        else if (y1 < y2)
                         {
-                            while (Y1 < Y2)
+                            while (y1 < y2)
                             {
-                                Y2 -= 1;
+                                y2 -= 1;
                                 break;
                             }
                         }
 
-                        Program.frame[X2 -= 1][Y2] = Program.river;
+                        Program.Frame[x2 -= 1][y2] = Program.River;
                         Helper.Render();
                     }
                 }
