@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TreasureIsland
 {
     class MapInit
@@ -26,6 +28,24 @@ namespace TreasureIsland
             Program.Frame.Add(new string[] { "8", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "#" });
             Program.Frame.Add(new string[] { "9", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#" });
 
+        }
+
+        public static void FrameMaker2()
+        {
+
+            const int width = 40;
+            const int height = 20;
+
+            var map = new int[width, height];
+
+            for (int x = 0; x < map.GetLength(1); x++)
+            {
+                for (int y = 0; y < map.GetLength(0); y++)
+                {
+                    Console.Write(map[y, x] + "");
+                }
+                Console.WriteLine();
+            }
         }
 
     }

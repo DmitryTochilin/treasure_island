@@ -14,29 +14,73 @@ namespace TreasureIsland
         public static string EmptyCell = ".";
         public static string Robot = "%";
 
+        public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map.txt";
+
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.CursorVisible = false;
 
-            FileReader.ReadingFromFile(@"C:\Users\dtochilin\source\repos\TreasureIsland\Map.txt");
+            FileReader.ReadingFromFile(FilePath);
 
             MapInit.FrameMaker();
 
             Helper.Render();
 
 
-            ObjectsOnMap.RobotOnMap(3, 4);
             ObjectsOnMap.HomeOnMap(FileReader.BaseParsing()[0],
                                    FileReader.BaseParsing()[1],
                                    FileReader.BaseParsing()[2],
                                    FileReader.BaseParsing()[3]);
-            ObjectsOnMap.BridgeOnMap(6, 8);
-            ObjectsOnMap.RiverOnMap(4, 2, 7, 5);
-            ObjectsOnMap.TreasureOnMap(2, 2);
+
+            ObjectsOnMap.RobotOnMap(FileReader.BaseParsing()[2],
+                                    FileReader.BaseParsing()[3]);
+
+
+
+            ObjectsOnMap.RiverOnMap(FileReader.RiverParsing()[0],
+                                    FileReader.RiverParsing()[1],
+
+                                    FileReader.RiverParsing()[2],
+                                    FileReader.RiverParsing()[3]);
+
+            ObjectsOnMap.RiverOnMap(FileReader.RiverParsing()[2],
+                                    FileReader.RiverParsing()[3],
+
+                                    FileReader.RiverParsing()[4],
+                                    FileReader.RiverParsing()[5]);
+
+            ObjectsOnMap.RiverOnMap(FileReader.RiverParsing()[4],
+                                    FileReader.RiverParsing()[5],
+
+                                    FileReader.RiverParsing()[6],
+                                    FileReader.RiverParsing()[7]);
+
+            ObjectsOnMap.RiverOnMap(FileReader.RiverParsing()[6],
+                                    FileReader.RiverParsing()[7],
+
+                                    FileReader.RiverParsing()[8],
+                                    FileReader.RiverParsing()[9]);
+
+            ObjectsOnMap.RiverOnMap(FileReader.RiverParsing()[8],
+                                    FileReader.RiverParsing()[9],
+
+                                    FileReader.RiverParsing()[10],
+                                    FileReader.RiverParsing()[11]);
+
+
+
+            ObjectsOnMap.BridgeOnMap(FileReader.BridgeParsing()[0],
+                                     FileReader.BridgeParsing()[1]);
+
+            ObjectsOnMap.TreasureOnMap(FileReader.TreasureParsing()[0],
+                                       FileReader.TreasureParsing()[1]);
 
 
             Helper.BackCursor();
+
+
+            //MapInit.FrameMaker2();
 
             Console.ReadKey();
         }
