@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace TreasureIsland
 {
     class Program
@@ -11,8 +12,8 @@ namespace TreasureIsland
         public static string Treasure = "+";
         public static string River = "~";
         public static string Bridge = "#";
-        public static string EmptyCell = ".";
         public static string Robot = "%";
+        public static string Path = "*";
 
         public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map.txt";
 
@@ -69,18 +70,25 @@ namespace TreasureIsland
                                     FileReader.RiverParsing()[11]);
 
 
-
             ObjectsOnMap.BridgeOnMap(FileReader.BridgeParsing()[0],
                                      FileReader.BridgeParsing()[1]);
 
             ObjectsOnMap.TreasureOnMap(FileReader.TreasureParsing()[0],
                                        FileReader.TreasureParsing()[1]);
 
+            ObjectsOnMap.PathOnMap(FileReader.BaseParsing()[2], 
+                                   FileReader.BaseParsing()[3], 
+                                   FileReader.BridgeParsing()[0], 
+                                   FileReader.BridgeParsing()[1]);
+
+            ObjectsOnMap.PathOnMap(FileReader.BridgeParsing()[0],
+                                   FileReader.BridgeParsing()[1],
+                                   FileReader.TreasureParsing()[0],
+                                   FileReader.TreasureParsing()[1]);
+
 
             Helper.BackCursor();
 
-
-            //MapInit.FrameMaker2();
 
             Console.ReadKey();
         }

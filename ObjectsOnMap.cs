@@ -82,6 +82,91 @@ namespace TreasureIsland
             Program.Frame[y][x] = Program.Bridge;
         }
 
+        public static void PathOnMap(int x1, int y1, int x2, int y2)
+        {
+            {
+                if (x1 == x2)
+                {
+                    if (y1 > y2)
+                    {
+                        while (y1 > y2)
+                        {
+                            y2 += 1;
+                            Program.Frame[y2][x2] = Program.Path;
+                            Helper.Render();
+                        }
+                    }
+                    else if (y1 < y2)
+                    {
+                        while (y1 < y2)
+                        {
+                            y2 -= 1;
+                            Program.Frame[y2][x2] = Program.Path;
+                            Helper.Render();
+                        }
+                    }
+
+                    Program.Frame[y2][x2] = Program.Path;
+                    Helper.Render();
+                }
+
+                if (x1 > x2)
+                {
+                    while (x1 > x2)
+                    {
+                        if (y1 > y2)
+                        {
+                            while (y1 > y2)
+                            {
+                                y2 += 1;
+                                break;
+                            }
+
+                            Program.Frame[y2][x2 += 1] = Program.Path;
+                            Helper.Render();
+                        }
+                        else if (y1 < y2)
+                        {
+                            while (y1 < y2)
+                            {
+                                y2 -= 1;
+                                break;
+                            }
+                        }
+
+                        Program.Frame[y2][x2 += 1] = Program.Path;
+                        Helper.Render();
+                    }
+                }
+
+                if (x1 < x2)
+                {
+                    while (x1 < x2)
+                    {
+                        if (y1 > y2)
+                        {
+                            while (y1 > y2)
+                            {
+                                y2 += 1;
+                                break;
+                            }
+                        }
+                        else if (y1 < y2)
+                        {
+                            while (y1 < y2)
+                            {
+                                y2 -= 1;
+                                break;
+                            }
+                        }
+
+                        Program.Frame[y2][x2 -= 1] = Program.Path;
+                        Helper.Render();
+                    }
+                }
+            }
+        }
+
         public static void RiverOnMap(int x1, int y1, int x2, int y2)
         {
             {
