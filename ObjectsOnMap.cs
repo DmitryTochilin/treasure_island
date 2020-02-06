@@ -1,4 +1,6 @@
 ﻿using System;
+using static TreasureIsland.Helper;
+using static TreasureIsland.Program;
 
 namespace TreasureIsland
 {
@@ -14,22 +16,22 @@ namespace TreasureIsland
                 while (x1 >= x2)
                 {
                     y2 = defaultY;
-                    Program.Frame[y2][x2 += 1] = Program.Home;
-                    Helper.Render();
+                    Frame[y2][x2 += 1] = Home;
+                    Render();
                     if (y1 > y2)
                     {
                         while (y1 > y2)
                         {
-                            Program.Frame[y2 += 1][x2] = Program.Home;
-                            Helper.Render();
+                            Frame[y2 += 1][x2] = Home;
+                            Render();
                         }
                     }
                     else if (y1 < y2)
                     {
                         while (y1 > y2)
                         {
-                            Program.Frame[y2 -= 1][x2] = Program.Home;
-                            Helper.Render();
+                            Frame[y2 -= 1][x2] = Home;
+                            Render();
                         }
                     }
                 }
@@ -39,22 +41,22 @@ namespace TreasureIsland
                 while (x1 <= x2)
                 {
                     y2 = defaultY;
-                    Program.Frame[y2][x2 -= 1] = Program.Home;
-                    Helper.Render();
+                    Frame[y2][x2 -= 1] = Home;
+                    Render();
                     if (y1 > y2)
                     {
                         while (y1 > y2)
                         {
-                            Program.Frame[y2 += 1][x2] = Program.Home;
-                            Helper.Render();
+                            Frame[y2 += 1][x2] = Home;
+                            Render();
                         }
                     }
                     else if (y1 < y2)
                     {
                         while (y1 < y2)
                         {
-                            Program.Frame[y2 -= 1][x2] = Program.Home;
-                            Helper.Render();
+                            Frame[y2 -= 1][x2] = Home;
+                            Render();
                         }
                     }
                 }
@@ -64,22 +66,22 @@ namespace TreasureIsland
         public static void RobotOnMap(int x, int y)
         {
             Console.SetCursorPosition(x, y);
-            Console.Write(Program.Robot);
-            Program.Frame[y][x] = Program.Robot;
+            Console.Write(Robot);
+            Frame[y][x] = Robot;
         }
 
         public static void TreasureOnMap(int x, int y)
         {
             Console.SetCursorPosition(x, y);
-            Console.Write(Program.Treasure);
-            Program.Frame[y][x] = Program.Treasure;
+            Console.Write(Treasure);
+            Frame[y][x] = Treasure;
         }
 
         public static void BridgeOnMap(int x, int y)
         {
             Console.SetCursorPosition(x, y);
-            Console.Write(Program.Bridge);
-            Program.Frame[y][x] = Program.Bridge;
+            Console.Write(Bridge);
+            Frame[y][x] = Bridge;
         }
 
         public static void PathOnMap(int x1, int y1, int x2, int y2)
@@ -92,8 +94,8 @@ namespace TreasureIsland
                         while (y1 > y2)
                         {
                             y2 += 1;
-                            Program.Frame[y2][x2] = Program.Path;
-                            Helper.Render();
+                            Frame[y2][x2] = Path;
+                            Render();
                         }
                     }
                     else if (y1 < y2)
@@ -101,13 +103,13 @@ namespace TreasureIsland
                         while (y1 < y2)
                         {
                             y2 -= 1;
-                            Program.Frame[y2][x2] = Program.Path;
-                            Helper.Render();
+                            Frame[y2][x2] = Path;
+                            Render();
                         }
                     }
 
-                    Program.Frame[y2][x2] = Program.Path;
-                    Helper.Render();
+                    Frame[y2][x2] = Path;
+                    Render();
                 }
 
                 if (x1 > x2)
@@ -122,8 +124,8 @@ namespace TreasureIsland
                                 break;
                             }
 
-                            Program.Frame[y2][x2 += 1] = Program.Path;
-                            Helper.Render();
+                            Frame[y2][x2 += 1] = Path;
+                            Render();
                         }
                         else if (y1 < y2)
                         {
@@ -134,8 +136,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Program.Frame[y2][x2 += 1] = Program.Path;
-                        Helper.Render();
+                        Frame[y2][x2 += 1] = Path;
+                        Render();
                     }
                 }
 
@@ -160,8 +162,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Program.Frame[y2][x2 -= 1] = Program.Path;
-                        Helper.Render();
+                        Frame[y2][x2 -= 1] = Path;
+                        Render();
                     }
                 }
             }
@@ -177,8 +179,8 @@ namespace TreasureIsland
                         while (y1 > y2)
                         {
                             y2 += 1;
-                            Program.Frame[y2][x2] = Program.River;
-                            Helper.Render();
+                            Frame[y2][x2] = River;
+                            Render();
                         }
                     }
                     else if (y1 < y2)
@@ -186,13 +188,13 @@ namespace TreasureIsland
                         while (y1 < y2)
                         {
                             y2 -= 1;
-                            Program.Frame[y2][x2] = Program.River;
-                            Helper.Render();
+                            Frame[y2][x2] = River;
+                            Render();
                         }
                     }
 
-                    Program.Frame[y2][x2] = Program.River;
-                    Helper.Render();
+                    Frame[y2][x2] = River;
+                    Render();
                 }
 
                 if (x1 > x2)
@@ -207,8 +209,8 @@ namespace TreasureIsland
                                 break;
                             }
 
-                            Program.Frame[y2][x2 += 1] = Program.River;
-                            Helper.Render();
+                            Frame[y2][x2 += 1] = River;
+                            Render();
                         }
                         else if (y1 < y2)
                         {
@@ -219,8 +221,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Program.Frame[y2][x2 += 1] = Program.River;
-                        Helper.Render();
+                        Frame[y2][x2 += 1] = River;
+                        Render();
                     }
                 }
 
@@ -245,8 +247,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Program.Frame[y2][x2 -= 1] = Program.River;
-                        Helper.Render();
+                        Frame[y2][x2 -= 1] = River;
+                        Render();
                     }
                 }
             }
