@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using static TreasureIsland.Coordinates;
 using static TreasureIsland.FileReader;
 using static TreasureIsland.Helper;
+using static TreasureIsland.MapInit;
 using static TreasureIsland.ObjectsOnMap;
 
 namespace TreasureIsland
@@ -27,7 +28,7 @@ namespace TreasureIsland
 
             ReadingFromFile(FilePath);
 
-            MapInit.FrameMaker();
+            FrameMaker();
 
             Render();
 
@@ -63,30 +64,23 @@ namespace TreasureIsland
 
         private static void RiverPainter()
         {
-            RiverOnMap(RiverX1,
-                       RiverY1,
-                       RiverX2,
-                       RiverY2);
+            int indexOfStartX = 0;
+            int indexOfStartY = 1;
+            int indexOfEndX = 2;
+            int indexOfEndY = 3;
 
-            RiverOnMap(RiverX2,
-                       RiverY2,
-                       RiverX3,
-                       RiverY3);
+            for (int i = 0; i < 5; i++)
+            {
+                RiverOnMap(RiverParsing()[indexOfStartX], 
+                           RiverParsing()[indexOfStartY], 
+                           RiverParsing()[indexOfEndX], 
+                           RiverParsing()[indexOfEndY]);
 
-            RiverOnMap(RiverX3,
-                       RiverY3,
-                       RiverX4,
-                       RiverY4);
-
-            RiverOnMap(RiverX4,
-                       RiverY4,
-                       RiverX5,
-                       RiverY5);
-
-            RiverOnMap(RiverX5,
-                       RiverY5,
-                       RiverX6,
-                       RiverY6);
+                indexOfStartX += 2;
+                indexOfStartY += 2;
+                indexOfEndX += 2;
+                indexOfEndY += 2;
+            }
         }
     }
 }

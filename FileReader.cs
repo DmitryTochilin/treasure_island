@@ -39,7 +39,7 @@ namespace TreasureIsland
             var x2 = int.Parse(endPoint[0]);
             var y2 = int.Parse(endPoint[1]);
 
-            var test = new int[]{x1, y1, x2, y2};
+            var test = new[]{x1, y1, x2, y2};
 
             return test;
         }
@@ -59,7 +59,7 @@ namespace TreasureIsland
             var y = int.Parse(coordinates[1]);
 
 
-            var test = new int[] { x, y };
+            var test = new[] { x, y };
 
             return test;
         }
@@ -79,7 +79,7 @@ namespace TreasureIsland
             var y = int.Parse(coordinates[1]);
 
 
-            var test = new int[] { x, y };
+            var test = new[] { x, y };
 
             return test;
         }
@@ -121,12 +121,10 @@ namespace TreasureIsland
             var y6 = int.Parse(sixthPoint[1]);
 
 
-            var test = new int[] { x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6 };
+            var test = new[] { x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6 };
 
             return test;
         }
-
-
     }
 }
         
