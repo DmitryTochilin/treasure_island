@@ -8,7 +8,7 @@ using static TreasureIsland.ObjectsOnMap;
 
 namespace TreasureIsland
 {
-    class Program
+    internal class Program
     {
         public static List<string[]> Frame = new List<string[]>();
 
@@ -21,7 +21,7 @@ namespace TreasureIsland
 
         public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map.txt";
 
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.CursorVisible = false;
@@ -47,40 +47,6 @@ namespace TreasureIsland
             BackCursor();
 
             Console.ReadKey();
-        }
-
-        private static void PathPainter()
-        {
-            PathOnMap(BaseX1,
-                      BaseY1,
-                      BridgeX,
-                      BridgeY);
-
-            PathOnMap(BridgeX,
-                      BridgeY,
-                      TreasureX,
-                      TreasureY);
-        }
-
-        private static void RiverPainter()
-        {
-            int indexOfStartX = 0;
-            int indexOfStartY = 1;
-            int indexOfEndX = 2;
-            int indexOfEndY = 3;
-
-            for (int i = 0; i < 5; i++)
-            {
-                RiverOnMap(RiverParsing()[indexOfStartX], 
-                           RiverParsing()[indexOfStartY], 
-                           RiverParsing()[indexOfEndX], 
-                           RiverParsing()[indexOfEndY]);
-
-                indexOfStartX += 2;
-                indexOfStartY += 2;
-                indexOfEndX += 2;
-                indexOfEndY += 2;
-            }
         }
     }
 }

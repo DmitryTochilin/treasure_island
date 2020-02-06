@@ -39,9 +39,9 @@ namespace TreasureIsland
             var x2 = int.Parse(endPoint[0]);
             var y2 = int.Parse(endPoint[1]);
 
-            var test = new[]{x1, y1, x2, y2};
+            var results = new[]{x1, y1, x2, y2};
 
-            return test;
+            return results;
         }
 
         public static int[] BridgeParsing()
@@ -49,9 +49,9 @@ namespace TreasureIsland
             line = ReadingFromFile(Program.FilePath)[1].ToLower();
 
             line = line.Replace("bridge", "")
-                .Replace(" ", "")
-                .Replace("(", "")
-                .Replace(")", "");
+                       .Replace(" ", "")
+                       .Replace("(", "")
+                       .Replace(")", "");
 
             var coordinates = line.Split(",");
 
@@ -59,9 +59,9 @@ namespace TreasureIsland
             var y = int.Parse(coordinates[1]);
 
 
-            var test = new[] { x, y };
+            var results = new[] { x, y };
 
-            return test;
+            return results;
         }
 
         public static int[] TreasureParsing()
@@ -69,9 +69,9 @@ namespace TreasureIsland
             line = ReadingFromFile(Program.FilePath)[2].ToLower();
 
             line = line.Replace("treasure", "")
-                .Replace(" ", "")
-                .Replace("(", "")
-                .Replace(")", "");
+                       .Replace(" ", "")
+                       .Replace("(", "")
+                       .Replace(")", "");
 
             var coordinates = line.Split(",");
 
@@ -79,9 +79,9 @@ namespace TreasureIsland
             var y = int.Parse(coordinates[1]);
 
 
-            var test = new[] { x, y };
+            var results = new[] { x, y };
 
-            return test;
+            return results;
         }
 
         public static int[] RiverParsing()
@@ -89,9 +89,9 @@ namespace TreasureIsland
             line = ReadingFromFile(Program.FilePath)[3].ToLower();
 
             line = line.Replace("water", "")
-                .Replace(" ", "")
-                .Replace("(", "")
-                .Replace(")", "");
+                       .Replace(" ", "")
+                       .Replace("(", "")
+                       .Replace(")", "");
 
             var coordinates = line.Split("->");
 
@@ -121,9 +121,9 @@ namespace TreasureIsland
             var y6 = int.Parse(sixthPoint[1]);
 
 
-            var test = new[] { x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6 };
+            var results = new[] { x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6 };
 
-            return test;
+            return results;
         }
     }
 }

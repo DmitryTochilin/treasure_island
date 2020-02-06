@@ -1,4 +1,6 @@
 ﻿using System;
+using static TreasureIsland.Coordinates;
+using static TreasureIsland.FileReader;
 
 namespace TreasureIsland
 {
@@ -16,6 +18,40 @@ namespace TreasureIsland
             foreach (var x in Program.Frame)
             {
                 Console.WriteLine(string.Join("", x));
+            }
+        }
+
+        public static void PathPainter()
+        {
+            ObjectsOnMap.PathOnMap(BaseX1,
+                                   BaseY1,
+                                   BridgeX,
+                                   BridgeY);
+
+            ObjectsOnMap.PathOnMap(BridgeX,
+                                   BridgeY,
+                                   TreasureX,
+                                   TreasureY);
+        }
+
+        public static void RiverPainter()
+        {
+            var indexOfStartX = 0;
+            var indexOfStartY = 1;
+            var indexOfEndX = 2;
+            var indexOfEndY = 3;
+
+            for (var i = 0; i < 5; i++)
+            {
+                ObjectsOnMap.RiverOnMap(RiverParsing()[indexOfStartX],
+                                        RiverParsing()[indexOfStartY],
+                                        RiverParsing()[indexOfEndX],
+                                        RiverParsing()[indexOfEndY]);
+
+                indexOfStartX += 2;
+                indexOfStartY += 2;
+                indexOfEndX += 2;
+                indexOfEndY += 2;
             }
         }
     }
