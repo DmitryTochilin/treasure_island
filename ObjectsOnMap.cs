@@ -6,7 +6,7 @@ namespace TreasureIsland
 {
     class ObjectsOnMap
     {
-        public static void HomeOnMap(int x1, int y1, int x2, int y2)
+        public static void BaseOnMap(int x1, int y1, int x2, int y2)
         {
 
             int defaultY = y2;

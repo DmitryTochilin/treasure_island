@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using static TreasureIsland.Coordinates;
 using static TreasureIsland.FileReader;
+using static TreasureIsland.Helper;
 using static TreasureIsland.ObjectsOnMap;
 
 namespace TreasureIsland
@@ -28,73 +29,64 @@ namespace TreasureIsland
 
             MapInit.FrameMaker();
 
-            Helper.Render();
+            Render();
 
-            RobotOnMap(BaseParsing()[0],
-                       BaseParsing()[1]);
+            RobotOnMap(BaseX1, BaseY1);
 
             RiverPainter();
 
-
-            TreasureOnMap(TreasureParsing()[0], 
-                          TreasureParsing()[1]);
+            TreasureOnMap(TreasureX, TreasureY);
 
             PathPainter();
 
-            HomeOnMap(BaseParsing()[0],
-                      BaseParsing()[1],
-                      BaseParsing()[2],
-                      BaseParsing()[3]);
+            BaseOnMap(BaseX1,BaseY1,BaseX2,BaseY2);
 
-            BridgeOnMap(BridgeParsing()[0],
-                        BridgeParsing()[1]);
+            BridgeOnMap(BridgeX, BridgeY);
 
-
-            Helper.BackCursor();
-
+            BackCursor();
 
             Console.ReadKey();
         }
 
         private static void PathPainter()
         {
-            PathOnMap(BaseParsing()[0],
-                BaseParsing()[1],
-                BridgeParsing()[0],
-                BridgeParsing()[1]);
+            PathOnMap(BaseX1,
+                      BaseY1,
+                      BridgeX,
+                      BridgeY);
 
-            PathOnMap(BridgeParsing()[0],
-                BridgeParsing()[1],
-                TreasureParsing()[0],
-                TreasureParsing()[1]);
+            PathOnMap(BridgeX,
+                      BridgeY,
+                      TreasureX,
+                      TreasureY);
         }
 
         private static void RiverPainter()
         {
-            RiverOnMap(RiverParsing()[0],
-                    RiverParsing()[1],
-                    RiverParsing()[2],
-                    RiverParsing()[3]);
+            RiverOnMap(RiverX1,
+                       RiverY1,
+                       RiverX2,
+                       RiverY2);
 
-            RiverOnMap(RiverParsing()[2],
-                    RiverParsing()[3],
-                    RiverParsing()[4],
-                    RiverParsing()[5]);
+            RiverOnMap(RiverX2,
+                       RiverY2,
+                       RiverX3,
+                       RiverY3);
 
-            RiverOnMap(RiverParsing()[4],
-                    RiverParsing()[5],
-                    RiverParsing()[6],
-                    RiverParsing()[7]);
+            RiverOnMap(RiverX3,
+                       RiverY3,
+                       RiverX4,
+                       RiverY4);
 
-            RiverOnMap(RiverParsing()[6],
-                    RiverParsing()[7],
-                    RiverParsing()[8],
-                    RiverParsing()[9]);
+            RiverOnMap(RiverX4,
+                       RiverY4,
+                       RiverX5,
+                       RiverY5);
 
-            RiverOnMap(RiverParsing()[8],
-                    RiverParsing()[9],
-                    RiverParsing()[10],
-                    RiverParsing()[11]);
+            RiverOnMap(RiverX5,
+                       RiverY5,
+                       RiverX6,
+                       RiverY6);
         }
     }
 }
