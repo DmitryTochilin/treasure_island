@@ -12,14 +12,14 @@ namespace TreasureIsland
     {
         public static List<string[]> Frame = new List<string[]>();
 
-        public static string Home = "@";
-        public static string Treasure = "+";
+        public static char Home = '@';
+        public static char Treasure = '+';
         public static string River = "~";
-        public static string Bridge = "#";
-        public static string Robot = "%";
-        public static string Path = "*";
+        public static char Bridge = '#';
+        public static char Robot = '%';
+        public static char Path = '*';
 
-        public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map.txt";
+        public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map5.txt";
 
         private static void Main()
         {
@@ -28,9 +28,7 @@ namespace TreasureIsland
 
             ReadingFromFile(FilePath);
 
-            FrameMaker();
-
-            Render();
+            MapMaker();
 
             RobotOnMap(BaseX1, BaseY1);
 

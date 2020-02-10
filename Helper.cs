@@ -12,15 +12,6 @@ namespace TreasureIsland
             Console.CursorVisible = true;
         }
 
-        public static void Render()
-        {
-            Console.Clear();
-            foreach (var x in Program.Frame)
-            {
-                Console.WriteLine(string.Join("", x));
-            }
-        }
-
         public static void PathPainter()
         {
             ObjectsOnMap.PathOnMap(BaseX1,
