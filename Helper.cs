@@ -12,6 +12,12 @@ namespace TreasureIsland
             Console.CursorVisible = true;
         }
 
+        public static void Render(int x, int y, char obj)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(obj);
+        }
+
         public static void PathPainter()
         {
             ObjectsOnMap.PathOnMap(BaseX1,

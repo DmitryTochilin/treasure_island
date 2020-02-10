@@ -1,5 +1,4 @@
-﻿using System;
-using static TreasureIsland.Helper;
+﻿using static TreasureIsland.Helper;
 using static TreasureIsland.Program;
 
 namespace TreasureIsland
@@ -16,22 +15,22 @@ namespace TreasureIsland
                 while (x1 >= x2)
                 {
                     y2 = defaultY;
-                    Console.SetCursorPosition(x2 += 1, y2);
-                    Console.Write(Home);
+                    x2 += 1;
+                    Render(x2, y2, Home);
                     if (y1 > y2)
                     {
                         while (y1 > y2)
                         {
-                            Console.SetCursorPosition(x2, y2 += 1);
-                            Console.Write(Home);
+                            y2 += 1;
+                            Render(x2, y2, Home);
                         }
                     }
                     else if (y1 < y2)
                     {
                         while (y1 > y2)
                         {
-                            Console.SetCursorPosition(x2, y2 -= 1);
-                            Console.Write(Home);
+                            y2 -= 1;
+                            Render(x2, y2, Home);
                         }
                     }
                 }
@@ -41,22 +40,22 @@ namespace TreasureIsland
                 while (x1 <= x2)
                 {
                     y2 = defaultY;
-                    Console.SetCursorPosition(x2 -= 1,y2);
-                    Console.Write(Home);
+                    x2 -= 1;
+                    Render(x2, y2, Home);
                     if (y1 > y2)
                     {
                         while (y1 > y2)
                         {
-                            Console.SetCursorPosition(x2, y2 += 1);
-                            Console.Write(Home);
+                            y2 += 1;
+                            Render(x2, y2, Home);
                         }
                     }
                     else if (y1 < y2)
                     {
                         while (y1 < y2)
                         {
-                            Console.SetCursorPosition(x2, y2 -= 1);
-                            Console.Write(Home);
+                            y2 -= 1;
+                            Render(x2, y2, Home);
                         }
                     }
                 }
@@ -65,20 +64,17 @@ namespace TreasureIsland
 
         public static void RobotOnMap(int x, int y)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(Robot);
+            Render(x, y, Robot);
         }
 
         public static void TreasureOnMap(int x, int y)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(Treasure);
+            Render(x, y, Treasure);
         }
 
         public static void BridgeOnMap(int x, int y)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(Bridge);
+            Render(x, y, Bridge);
         }
 
         public static void PathOnMap(int x1, int y1, int x2, int y2)
@@ -91,8 +87,7 @@ namespace TreasureIsland
                         while (y1 > y2)
                         {
                             y2 += 1;
-                            Console.SetCursorPosition(x2, y2);
-                            Console.Write(Path);
+                            Render(x2, y2, Path);
                         }
                     }
                     else if (y1 < y2)
@@ -100,13 +95,11 @@ namespace TreasureIsland
                         while (y1 < y2)
                         {
                             y2 -= 1;
-                            Console.SetCursorPosition(x2, y2);
-                            Console.Write(Path);
+                            Render(x2, y2, Path);
                         }
                     }
 
-                    Console.SetCursorPosition(x2, y2);
-                    Console.Write(Path);
+                    Render(x2, y2, Path);
                 }
 
                 if (x1 > x2)
@@ -121,8 +114,8 @@ namespace TreasureIsland
                                 break;
                             }
 
-                            Console.SetCursorPosition(x2 += 1,y2);
-                            Console.Write(Path);
+                            x2 += 1;
+                            Render(x2, y2, Path);
                         }
                         else if (y1 < y2)
                         {
@@ -133,8 +126,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Console.SetCursorPosition(x2 += 1, y2);
-                        Console.Write(Path);
+                        x2 += 1;
+                        Render(x2, y2, Path);
                     }
                 }
 
@@ -159,8 +152,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Console.SetCursorPosition(x2 -= 1, y2);
-                        Console.Write(Path);
+                        x2 -= 1;
+                        Render(x2, y2, Path);
                     }
                 }
             }
@@ -176,8 +169,7 @@ namespace TreasureIsland
                         while (y1 > y2)
                         {
                             y2 += 1;
-                            Console.SetCursorPosition(x2, y2);
-                            Console.Write(River);
+                            Render(x2, y2, River);
                         }
                     }
                     else if (y1 < y2)
@@ -185,13 +177,11 @@ namespace TreasureIsland
                         while (y1 < y2)
                         {
                             y2 -= 1;
-                            Console.SetCursorPosition(x2, y2);
-                            Console.Write(River);
+                            Render(x2, y2, River);
                         }
                     }
 
-                    Console.SetCursorPosition(x2,y2);
-                    Console.Write(River);
+                    Render(x2, y2, River);
                 }
 
                 if (x1 > x2)
@@ -206,8 +196,8 @@ namespace TreasureIsland
                                 break;
                             }
 
-                            Console.SetCursorPosition(x2 += 1, y2);
-                            Console.Write(River);
+                            x2 += 1;
+                            Render(x2, y2, River);
                         }
                         else if (y1 < y2)
                         {
@@ -218,8 +208,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Console.SetCursorPosition(x2 += 1,y2);
-                        Console.Write(River);
+                        x2 += 1;
+                        Render(x2, y2, River);
                     }
                 }
 
@@ -244,8 +234,8 @@ namespace TreasureIsland
                             }
                         }
 
-                        Console.SetCursorPosition(x2 -= 1,y2);
-                        Console.Write(River);
+                        x2 -= 1;
+                        Render(x2, y2, River);
                     }
                 }
             }

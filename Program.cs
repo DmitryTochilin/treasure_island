@@ -10,16 +10,14 @@ namespace TreasureIsland
 {
     internal class Program
     {
-        public static List<string[]> Frame = new List<string[]>();
-
         public static char Home = '@';
         public static char Treasure = '+';
-        public static string River = "~";
+        public static char River = '~';
         public static char Bridge = '#';
         public static char Robot = '%';
         public static char Path = '*';
 
-        public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map5.txt";
+        public static string FilePath = @"C:\Users\dtochilin\Documents\TreasureIsland\Maps\Map.txt";
 
         private static void Main()
         {
