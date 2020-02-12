@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using static TreasureIsland.Coordinates;
 using static TreasureIsland.FileReader;
 using static TreasureIsland.Helper;
@@ -33,8 +32,6 @@ namespace TreasureIsland
             RiverPainter();
 
             TreasureOnMap(TreasureX, TreasureY);
-
-            PathPainter();
 
             BaseOnMap(BaseX1,BaseY1,BaseX2,BaseY2);
 

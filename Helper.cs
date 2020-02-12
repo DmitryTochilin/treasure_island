@@ -1,5 +1,4 @@
 ﻿using System;
-using static TreasureIsland.Coordinates;
 using static TreasureIsland.FileReader;
 
 namespace TreasureIsland
@@ -16,19 +15,6 @@ namespace TreasureIsland
         {
             Console.SetCursorPosition(x, y);
             Console.Write(obj);
-        }
-
-        public static void PathPainter()
-        {
-            ObjectsOnMap.PathOnMap(BaseX1,
-                                   BaseY1,
-                                   BridgeX,
-                                   BridgeY);
-
-            ObjectsOnMap.PathOnMap(BridgeX,
-                                   BridgeY,
-                                   TreasureX,
-                                   TreasureY);
         }
 
         public static void RiverPainter()
