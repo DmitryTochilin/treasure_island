@@ -1,11 +1,13 @@
 ﻿using System;
+using static TreasureIsland.Coordinates;
+
 
 namespace TreasureIsland
 {
     class MapInit
     {
-        const int Width = 40;
-        const int Height = 20;
+        public static int Width = MaxX();
+        public static int Height = MaxY();
         public static char[,] Map = new char[Width, Height];
 
         public static void MapMaker()
@@ -13,50 +15,50 @@ namespace TreasureIsland
             int num = 0;
 
 
-            for (int h = 0; h < Map.GetLength(1); h++)
+            for (int y = 0; y < Map.GetLength(1); y++)
             {
 
-                for (int w = 0; w < Map.GetLength(0); w++)
+                for (int x = 0; x < Map.GetLength(0); x++)
                 {
 
-                    if (h == Height - 1 && w != 0)
+                    if (y == Height - 1 && x != 0)
                     {
-                        Map[w, h] = '#';
-                        Console.Write(Map[w, h]);
+                        Map[x, y] = '#';
+                        Console.Write(Map[x, y]);
                     }
-                    else if (w == Width - 1 && h != 0)
+                    else if (x == Width - 1 && y != 0)
                     {
-                        Map[w, h] = '#';
-                        Console.Write(Map[w, h]);
+                        Map[x, y] = '#';
+                        Console.Write(Map[x, y]);
                     }
-                    else if (w == 0)
+                    else if (x == 0)
                     {
-                        Map[w, h] = Convert.ToChar(num.ToString());
-                        Console.Write(Map[w, h]);
+                        Map[x, y] = Convert.ToChar(num.ToString());
+                        Console.Write(Map[x, y]);
                         num = num + 1;
                         if (num == 10)
                         {
                             num = 0;
                         }
                     }
-                    else if (h == 0)
+                    else if (y == 0)
                     {
-                        Map[w, h] = Convert.ToChar(num.ToString());
-                        Console.Write(Map[w, h]);
+                        Map[x, y] = Convert.ToChar(num.ToString());
+                        Console.Write(Map[x, y]);
                         num = num + 1;
                         if (num == 10)
                         {
                             num = 0;
                         }
-                        if (h == 0 && w == 39)
+                        if (y == 0 && x == Width - 1)
                         {
                             num = 1;
                         }
                     }
                     else
                     {
-                        Map[w, h] = '.';
-                        Console.Write(Map[w, h]);
+                        Map[x, y] = '.';
+                        Console.Write(Map[x, y]);
                     }
                 }
                 Console.WriteLine();

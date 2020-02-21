@@ -45,10 +45,9 @@ namespace TreasureIsland
         public static int RiverY6 = RiverParsing()[11];
 
 
-        //this method not used in current realization
         public static int MaxX()
         {
-            int[] array = { TreasureX, BridgeX, BaseX1, BaseX2, RiverX1, RiverX2, RiverX3, RiverX4, RiverX5, RiverX6 };
+            int[] array = { TreasureX + 4, BridgeX + 4, BaseX1 + 4, BaseX2 + 4, RiverX1, RiverX2, RiverX3, RiverX4, RiverX5, RiverX6 };
 
             int max = int.MinValue;
             foreach (int x in array)
@@ -61,10 +60,9 @@ namespace TreasureIsland
             return max;
         }
 
-        //this method not used in current realization
         public static int MaxY()
         {
-            int[] array = { TreasureY, BridgeY, BaseY1, BaseY2, RiverY1, RiverY2, RiverY3, RiverY4, RiverY5, RiverY6 };
+            int[] array = { TreasureY + 4, BridgeY + 4, BaseY1 + 4, BaseY2 + 4, RiverY1, RiverY2, RiverY3, RiverY4, RiverY5, RiverY6 };
 
             int max = int.MinValue;
             foreach (int y in array)
